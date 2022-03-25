@@ -34,10 +34,10 @@ class _HomeState extends State<Home> {
 
   static final List<String> _appBarName = <String>[
     "Dashboard",
-    "Stats",
-    "Predictions and Assistant",
+    "Statistics",
+    "Finences Assistant",
     "Goals and challenges",
-    "Log and Progression"
+    "Logs"
   ];
 
 
