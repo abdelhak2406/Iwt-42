@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
+import 'package:firstapp/shared/app_bar.dart';
 import 'package:flutter/material.dart';
 
 import 'package:firstapp/screens/home/assistant.dart';
@@ -31,7 +32,7 @@ class _HomeState extends State<Home> {
     Assistant()
   ];
 
-  static List<String> _appBarName = <String>[
+  static final List<String> _appBarName = <String>[
     "Dashboard",
     "Stats",
     "Predictions",
@@ -43,6 +44,7 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: _appBarName[_currentIndex] != "Dashboard" ? SharedAppBar(pageTitle: _appBarName[_currentIndex]) : null,
       floatingActionButton: FloatingActionButton(
         tooltip: 'Add income, expense or goal',
         backgroundColor: Color(0xffAD90EC),
