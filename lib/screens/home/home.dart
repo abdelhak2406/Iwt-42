@@ -1,7 +1,12 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
-import 'package:firstapp/screens/home/dashboard.dart';
 import 'package:flutter/material.dart';
+
+import 'package:firstapp/screens/home/assistant.dart';
+import 'package:firstapp/screens/home/dashboard.dart';
+import 'package:firstapp/screens/home/goals.dart';
+import 'package:firstapp/screens/home/predictions.dart';
+import 'package:firstapp/screens/home/stats.dart';
 
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/rendering.dart';
@@ -17,7 +22,24 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   
   int _currentIndex = 0;
-  
+
+  static final List<Widget> _screens = <Widget>[
+    Dashboard(),
+    Stats(),
+    Predictions(),
+    Goals(),
+    Assistant()
+  ];
+
+  static List<String> _appBarName = <String>[
+    "Dashboard",
+    "Stats",
+    "Predictions",
+    "Goals",
+    "Assistant"
+  ];
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -46,7 +68,7 @@ class _HomeState extends State<Home> {
           });
         },
       ),
-      body: Dashboard(),
+      body: _screens[_currentIndex],
     );
   }
 }
