@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/rendering.dart';
+import 'package:lucide_icons/lucide_icons.dart';
 
 class Home extends StatefulWidget {
   const Home({ Key? key }) : super(key: key);
@@ -21,7 +22,7 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
-        tooltip: 'add income, expense or goal',
+        tooltip: 'Add income, expense or goal',
         backgroundColor: Color(0xffAD90EC),
         child: Icon(Icons.add),
         onPressed: () => {},
@@ -33,10 +34,11 @@ class _HomeState extends State<Home> {
         animationDuration: Duration(seconds: 1),
         animationCurve: Curves.bounceOut,
         items: <Widget> [
-          Icon(Icons.home, color: Colors.white),
-          Icon(Icons.home, color: Colors.white),
-          Icon(Icons.home, color: Colors.white),
-          Icon(Icons.home, color: Colors.white)
+          Icon(LucideIcons.home, color: Colors.white),
+          Icon(LucideIcons.pieChart, color: Colors.white),
+          Icon(LucideIcons.disc, color: Colors.white),
+          Icon(LucideIcons.listChecks, color: Colors.white),
+          Icon(LucideIcons.bot, color: Colors.white),
         ],
         onTap: (index){
           setState(() {
