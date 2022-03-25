@@ -1,9 +1,9 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
+import 'package:firstapp/screens/home/log.dart';
 import 'package:firstapp/shared/app_bar.dart';
 import 'package:flutter/material.dart';
 
-import 'package:firstapp/screens/home/assistant.dart';
 import 'package:firstapp/screens/home/dashboard.dart';
 import 'package:firstapp/screens/home/goals.dart';
 import 'package:firstapp/screens/home/predictions.dart';
@@ -29,7 +29,7 @@ class _HomeState extends State<Home> {
     Stats(),
     Predictions(),
     Goals(),
-    Assistant()
+    Log()
   ];
 
   static final List<String> _appBarName = <String>[
