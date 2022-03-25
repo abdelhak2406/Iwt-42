@@ -23,7 +23,7 @@ class _SharedAppBarState extends State<SharedAppBar> {
         style: TextStyle(
           color: Colors.white,
           fontSize: 25,
-          fontWeight: FontWeight.normal,
+          fontWeight: FontWeight.bold,
         ),
       ),
       elevation: 0.0,
