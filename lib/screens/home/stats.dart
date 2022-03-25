@@ -94,8 +94,9 @@ class _StatsState extends State<Stats> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Container  (
-            child: Image.asset('assets/images/chart.png'),
+          SizedBox (
+            height: 250,
+            child: Center(child: Image.asset('assets/images/chart.png')),
           ),
           Padding(
             padding: const EdgeInsets.only(bottom: 10),
@@ -112,7 +113,7 @@ class _StatsState extends State<Stats> {
                 borderRadius: BorderRadius.all(Radius.circular(10.0))
               ),
               child: SizedBox(
-                height: 230,
+                height: 250,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
