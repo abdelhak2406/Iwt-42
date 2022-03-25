@@ -44,7 +44,7 @@ class _HomeState extends State<Home> {
           });
         },
       ),
-      body: Container(color: Colors.white, child: Container(),),
+      body: Dashboard(),
     );
   }
 }
