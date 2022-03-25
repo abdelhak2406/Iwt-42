@@ -3,6 +3,9 @@
 import 'package:firstapp/screens/home/dashboard.dart';
 import 'package:flutter/material.dart';
 
+import 'package:curved_navigation_bar/curved_navigation_bar.dart';
+import 'package:flutter/rendering.dart';
+
 class Home extends StatefulWidget {
   const Home({ Key? key }) : super(key: key);
 
@@ -12,51 +15,36 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   
-  int _selectedIndex = 0;
-
-  void _onItemTapped(int index) {
-    if (_selectedIndex != index){
-      setState(() {
-        _selectedIndex = index;
-      });
-    }
-  }
+  int _currentIndex = 0;
   
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
         tooltip: 'add income, expense or goal',
+        backgroundColor: Color(0xffAD90EC),
         child: Icon(Icons.add),
         onPressed: () => {},
       ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      bottomNavigationBar: BottomNavigationBar(
-        type: BottomNavigationBarType.fixed,
-        items: <BottomNavigationBarItem> [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home'
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home'
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home'
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home'
-          )
+      bottomNavigationBar: CurvedNavigationBar(
+        color: Color(0xffAD90EC),
+        buttonBackgroundColor: Color(0xffAD90EC),
+        backgroundColor: Colors.white,
+        animationDuration: Duration(seconds: 1),
+        animationCurve: Curves.bounceOut,
+        items: <Widget> [
+          Icon(Icons.home, color: Colors.white),
+          Icon(Icons.home, color: Colors.white),
+          Icon(Icons.home, color: Colors.white),
+          Icon(Icons.home, color: Colors.white)
         ],
-        currentIndex: _selectedIndex,
-        selectedItemColor: Colors.amber[800],
-        unselectedItemColor: Colors.black,
-        onTap: _onItemTapped,
+        onTap: (index){
+          setState(() {
+            _currentIndex=index;
+          });
+        },
       ),
-      body: Dashboard(),
+      body: Container(color: Colors.white, child: Container(),),
     );
   }
 }
