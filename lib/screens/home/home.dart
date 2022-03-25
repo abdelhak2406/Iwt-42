@@ -35,9 +35,9 @@ class _HomeState extends State<Home> {
   static final List<String> _appBarName = <String>[
     "Dashboard",
     "Stats",
-    "Predictions",
-    "Goals",
-    "Assistant"
+    "Predictions and Assistant",
+    "Goals and challenges",
+    "Log and Progression"
   ];
 
 
@@ -60,9 +60,9 @@ class _HomeState extends State<Home> {
         items: <Widget> [
           Icon(LucideIcons.home, color: Colors.white),
           Icon(LucideIcons.pieChart, color: Colors.white),
+          Icon(LucideIcons.bot, color: Colors.white),
           Icon(LucideIcons.disc, color: Colors.white),
           Icon(LucideIcons.listChecks, color: Colors.white),
-          Icon(LucideIcons.bot, color: Colors.white),
         ],
         onTap: (index){
           setState(() {
