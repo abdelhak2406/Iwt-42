@@ -45,7 +45,7 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: _appBarName[_currentIndex] != "Dashboard" ? SharedAppBar(pageTitle: _appBarName[_currentIndex]) : null,
-      floatingActionButton: FloatingActionButton(
+      floatingActionButton: _appBarName[_currentIndex] != "Dashboard" ? null : FloatingActionButton(
         tooltip: 'Add income, expense or goal',
         backgroundColor: Color(0xffAD90EC),
         child: Icon(Icons.add),
