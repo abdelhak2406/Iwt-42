@@ -69,81 +69,84 @@ class _LogState extends State<Log> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children:[
-        SizedBox(
-          height: 140,
-          child: Padding(
-            padding: const EdgeInsets.all(10.0),
-            child: Image.asset('assets/images/growntree.jpg'),
-          )
-        ),
+    return Container(
+      color: Colors.white,
+      child: Column(
+        children:[
+          SizedBox(
+            height: 140,
+            child: Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: Image.asset('assets/images/growntree.jpg'),
+            )
+          ),
 
-        Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: SingleChildScrollView(
-            scrollDirection: Axis.vertical,
-            child: Container(
-              decoration: BoxDecoration(
-                boxShadow: [
-                  new BoxShadow(
-                    color: Colors.grey[350]!,
-                    blurRadius: 3.0,
-                  ),
-                ],
-                borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                color: Colors.white
-              ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Text(
-                      'My Coupons',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 13,
-                        color: Color(0xff39255C),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: SingleChildScrollView(
+              scrollDirection: Axis.vertical,
+              child: Container(
+                decoration: BoxDecoration(
+                  boxShadow: [
+                    new BoxShadow(
+                      color: Colors.grey[350]!,
+                      blurRadius: 3.0,
+                    ),
+                  ],
+                  borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                  color: Colors.white
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text(
+                        'My Coupons',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 13,
+                          color: Color(0xff39255C),
+                        ),
                       ),
                     ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Image.asset('assets/images/coupon.png'),
-                  ),
-                  Divider(),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Text(
-                      'Achivements',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 13,
-                        color: Color(0xff39255C),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Image.asset('assets/images/coupon.png'),
+                    ),
+                    Divider(),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text(
+                        'Achivements',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 13,
+                          color: Color(0xff39255C),
+                        ),
                       ),
                     ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(15.0),
-                    child:SizedBox(
-                      child: achivementItem("assets/images/achivement1.png", "Achivement 1"),
-                    )
-                  ),
-                  /*Padding(
-                    padding: const EdgeInsets.all(15.0),
-                    child:SizedBox(
-                      child: achivementItem("assets/images/achivement2.png", "Achivement 2"),
-                    )
-                  ),*/              
-                ],
+                    Padding(
+                      padding: const EdgeInsets.all(15.0),
+                      child:SizedBox(
+                        child: achivementItem("assets/images/achivement1.png", "Achivement 1"),
+                      )
+                    ),
+                    /*Padding(
+                      padding: const EdgeInsets.all(15.0),
+                      child:SizedBox(
+                        child: achivementItem("assets/images/achivement2.png", "Achivement 2"),
+                      )
+                    ),*/              
+                  ],
+                ),
               ),
             ),
           ),
-        ),
-      ]
-      
+        ]
+        
+      ),
     );
   }
 }

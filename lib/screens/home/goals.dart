@@ -55,31 +55,34 @@ class _GoalsState extends State<Goals> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        SizedBox(
-          height: 140,
-          child: Padding(
-            padding: const EdgeInsets.all(10.0),
-            child: Image.asset('assets/images/money.png'),
-          )
-          ),
-        Padding(
-          padding: const EdgeInsets.all(15.0),
-          child: Container(
-            child: ExpansionPanelList(
-              children: [
-                ExpansionPanel(headerBuilder: (context, isOpen) { return HeaderTemplate(1, 0.5);}, body: BodyTemplate(), isExpanded: _isOpen[0])
-              ],
-              expansionCallback: (i, isOpen) => 
-                setState(() {
-                  _isOpen[i] = !isOpen;
-                }),
+    return Container(
+      color: Colors.white,
+      child: Column(
+        children: [
+          SizedBox(
+            height: 140,
+            child: Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: Image.asset('assets/images/money.png'),
+            )
             ),
-          ),
-        )
-      ],
-      
+          Padding(
+            padding: const EdgeInsets.all(15.0),
+            child: Container(
+              child: ExpansionPanelList(
+                children: [
+                  ExpansionPanel(headerBuilder: (context, isOpen) { return HeaderTemplate(1, 0.5);}, body: BodyTemplate(), isExpanded: _isOpen[0])
+                ],
+                expansionCallback: (i, isOpen) => 
+                  setState(() {
+                    _isOpen[i] = !isOpen;
+                  }),
+              ),
+            ),
+          )
+        ],
+        
+      ),
     );
   }
 }
