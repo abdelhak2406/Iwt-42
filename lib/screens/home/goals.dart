@@ -59,7 +59,10 @@ class _GoalsState extends State<Goals> {
       children: [
         SizedBox(
           height: 140,
-          child: Image.asset('assets/images/money.png')
+          child: Padding(
+            padding: const EdgeInsets.all(10.0),
+            child: Image.asset('assets/images/money.png'),
+          )
           ),
         Padding(
           padding: const EdgeInsets.all(15.0),
