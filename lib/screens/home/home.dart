@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
+import 'package:firstapp/screens/home/drawer.dart';
 import 'package:firstapp/screens/home/log.dart';
 import 'package:firstapp/shared/app_bar.dart';
 import 'package:flutter/material.dart';
@@ -49,7 +50,11 @@ class _HomeState extends State<Home> {
         tooltip: 'Add income, expense or goal',
         backgroundColor: Color(0xffAD90EC),
         child: Icon(Icons.add),
-        onPressed: () => {},
+        onPressed: () => {
+          showModalBottomSheet(context: context, builder: (context) {
+            return BottomDrawer();
+          })
+        },
       ),
       bottomNavigationBar: CurvedNavigationBar(
         color: Color(0xffAD90EC),
