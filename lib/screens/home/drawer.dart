@@ -13,11 +13,11 @@ class _BottomDrawerState extends State<BottomDrawer> {
 
   Widget income() {
     return Container(
-      padding:EdgeInsets.all(10.0),
-      child:new Form(
+      //padding:EdgeInsets.all(10.0),
+      //child:new Form(
           //key: this._formKey,
-          child: new ListView(
-            children: <Widget>[
+          //child: new ListView(
+            //children: <Widget>[
               // We will add fields here.
                 // new TextFormField(
                 // keyboardType: TextInputType.emailAddress, // Use email input type for emails.
@@ -25,9 +25,10 @@ class _BottomDrawerState extends State<BottomDrawer> {
                 //   hintText: 'you@example.com',
                 //   labelText: 'E-mail Address'
                 // )
-            ],
-      )
-    ));
+            //],
+      //)
+    //)
+    );
 
   }
 
