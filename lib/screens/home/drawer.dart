@@ -13,23 +13,17 @@ class _BottomDrawerState extends State<BottomDrawer> {
 
   Widget income() {
     return Container(
-      //padding:EdgeInsets.all(10.0),
-      //child:new Form(
-          //key: this._formKey,
-          //child: new ListView(
-            //children: <Widget>[
-              // We will add fields here.
-                // new TextFormField(
-                // keyboardType: TextInputType.emailAddress, // Use email input type for emails.
-                // decoration: new InputDecoration(
-                //   hintText: 'you@example.com',
-                //   labelText: 'E-mail Address'
-                // )
-            //],
-      //)
-    //)
+      padding:EdgeInsets.all(10.0),
+      child: Column (
+        children: [
+          Row(
+            children: [],
+          )
+          // We will add fields here.
+          
+        ],
+      )
     );
-
   }
 
   Widget expenses() {

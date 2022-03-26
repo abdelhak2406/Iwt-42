@@ -9,7 +9,7 @@ class Goals extends StatefulWidget {
 
 class _GoalsState extends State<Goals> {
 
-  List<bool> _isOpen = [false];
+  List<bool> _isOpen = [false, false, false, false, false];
 
   Widget HeaderTemplate(challengenum, percent) {
     return Padding(
@@ -69,14 +69,22 @@ class _GoalsState extends State<Goals> {
           Padding(
             padding: const EdgeInsets.all(15.0),
             child: Container(
-              child: ExpansionPanelList(
-                children: [
-                  ExpansionPanel(headerBuilder: (context, isOpen) { return HeaderTemplate(1, 0.5);}, body: BodyTemplate(), isExpanded: _isOpen[0])
-                ],
-                expansionCallback: (i, isOpen) => 
-                  setState(() {
-                    _isOpen[i] = !isOpen;
-                  }),
+              child: SingleChildScrollView(
+                scrollDirection: Axis.vertical,
+                child: ExpansionPanelList(
+                  children: [
+                    ExpansionPanel(headerBuilder: (context, isOpen) { return HeaderTemplate(1, 0.5);}, body: BodyTemplate(), isExpanded: _isOpen[0]),
+                    ExpansionPanel(headerBuilder: (context, isOpen) { return HeaderTemplate(2, 0.75);}, body: BodyTemplate(), isExpanded: _isOpen[1]),
+                    ExpansionPanel(headerBuilder: (context, isOpen) { return HeaderTemplate(3, 0.25);}, body: BodyTemplate(), isExpanded: _isOpen[2]),
+                    ExpansionPanel(headerBuilder: (context, isOpen) { return HeaderTemplate(4, 0.25);}, body: BodyTemplate(), isExpanded: _isOpen[3]),
+                    ExpansionPanel(headerBuilder: (context, isOpen) { return HeaderTemplate(5, 0.25);}, body: BodyTemplate(), isExpanded: _isOpen[4]),
+              
+                  ],
+                  expansionCallback: (i, isOpen) => 
+                    setState(() {
+                      _isOpen[i] = !isOpen;
+                    }),
+                ),
               ),
             ),
           )
