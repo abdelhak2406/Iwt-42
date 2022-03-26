@@ -46,14 +46,17 @@ class _LogState extends State<Log> {
                       fontSize: 13,
                     ),
                   ),
-                  Text(
-                    '  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation',
-                    style: TextStyle(
-                      color: Color(0xff857B96),
-                      fontWeight: FontWeight.normal,
-                      fontSize: 9
+                  Padding(
+                    padding: const EdgeInsets.only(right:8.0),
+                    child: Text(
+                      '  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation',
+                      style: TextStyle(
+                        color: Color(0xff857B96),
+                        fontWeight: FontWeight.normal,
+                        fontSize: 9
+                      ),
+                      textAlign: TextAlign.justify,
                     ),
-                    textAlign: TextAlign.justify,
                   ),
                 ],
               ),
