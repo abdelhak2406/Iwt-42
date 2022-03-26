@@ -11,6 +11,39 @@ class _GoalsState extends State<Goals> {
 
   List<bool> _isOpen = [false];
 
+  Widget HeaderTemplate(challengenum, percent) {
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Text(
+            'Challenge $challengenum',
+            style: TextStyle(
+              color: Color(0xff39255C),
+              fontWeight: FontWeight.bold,
+              fontSize: 11,
+            ),
+
+          ),
+          SizedBox(
+            width: 100,
+            child: LinearProgressIndicator(
+              color: Color(0xffE38056),
+              backgroundColor: Color(0xffDBD7E0),
+              value: percent,
+              minHeight:10,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget BodyTemplate() {
+    return Text('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.');
+  }
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -24,38 +57,7 @@ class _GoalsState extends State<Goals> {
           child: Container(
             child: ExpansionPanelList(
               children: [
-                ExpansionPanel(headerBuilder: 
-                  (context, isOpen) {
-                    return Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            'Challenge 1',
-                            style: TextStyle(
-                              color: Color(0xff39255C),
-                              fontWeight: FontWeight.bold,
-                              fontSize: 11,
-                            ),
-
-                          ),
-                          SizedBox(
-                            width: 100,
-                            child: LinearProgressIndicator(
-                              color: Color(0xffE38056),
-                              backgroundColor: Color(0xffDBD7E0),
-                              value: 0.5,
-                              minHeight:10,
-                            ),
-                          ),
-                        ],
-                      ),
-                    );
-                  }, 
-                  body: Text('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'),
-                  isExpanded: _isOpen[0] 
-                )
+                ExpansionPanel(headerBuilder: (context, isOpen) { return HeaderTemplate(1, 0.5);}, body: BodyTemplate(), isExpanded: _isOpen[0])
               ],
               expansionCallback: (i, isOpen) => 
                 setState(() {
